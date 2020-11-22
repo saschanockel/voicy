@@ -1,9 +1,6 @@
 module.exports = function engineString(engine) {
-  if (engine === 'wit') {
-    return 'Wit.ai'
-  } else if (engine === 'ashmanov') {
-    return 'Nanosemantics'
-  } else {
+    if (engine === 'wit') {
+        return 'Wit.ai'
+    }
     return 'Google Speech'
-  }
 }

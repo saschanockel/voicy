@@ -1,5 +1,5 @@
 // Exports
 module.exports = {
-  Voice: require('./voice'),
-  Chat: require('./chat'),
+    Voice: require('./voice'),
+    Chat: require('./chat'),
 }

@@ -8,10 +8,10 @@ const Storage = require('@google-cloud/storage')
  * @returns Authenticated Google storage module
  */
 function getStorage(key) {
-  return new Storage({
-    credentials: key,
-    projectId: key.project_id,
-  })
+    return new Storage({
+        credentials: key,
+        projectId: key.project_id,
+    })
 }
 
 /**
@@ -21,49 +21,50 @@ function getStorage(key) {
  * @returns end link of the uploaded file
  */
 async function put(filePath, chat) {
-  return new Promise(async (resolve, reject) => {
-    try {
-      const key = JSON.parse(chat.googleKey)
-      const storage = getStorage(key)
-      const bucket = storage.bucket(key.project_id)
-      const exists = await bucket.exists()
-      if (!exists[0]) {
-        bucket.create(async err => {
-          if (err) {
-            reject(err)
-            return
-          }
-          try {
-            const uri = await upload(bucket, filePath, key)
-            resolve(uri)
-          } catch (error) {
-            reject(error)
-          }
-        })
-      } else {
+    // eslint-disable-next-line no-async-promise-executor
+    return new Promise(async (resolve, reject) => {
         try {
-          const uri = await upload(bucket, filePath, key)
-          resolve(uri)
+            const key = JSON.parse(chat.googleKey)
+            const storage = getStorage(key)
+            const bucket = storage.bucket(key.project_id)
+            const exists = await bucket.exists()
+            if (!exists[0]) {
+                bucket.create(async err => {
+                    if (err) {
+                        reject(err)
+                        return
+                    }
+                    try {
+                        const uri = await upload(bucket, filePath, key)
+                        resolve(uri)
+                    } catch (error) {
+                        reject(error)
+                    }
+                })
+            } else {
+                try {
+                    const uri = await upload(bucket, filePath, key)
+                    resolve(uri)
+                } catch (err) {
+                    reject(err)
+                }
+            }
         } catch (err) {
-          reject(err)
+            reject(err)
         }
-      }
-    } catch (err) {
-      reject(err)
-    }
-  })
+    })
 }
 
 function upload(bucket, filePath, key) {
-  return new Promise((resolve, reject) => {
-    bucket.upload(filePath, (err, file) => {
-      if (err) {
-        reject(err)
-        return
-      }
-      resolve(`gs://${key.project_id}/${file.name}`)
+    return new Promise((resolve, reject) => {
+        bucket.upload(filePath, (err, file) => {
+            if (err) {
+                reject(err)
+                return
+            }
+            resolve(`gs://${key.project_id}/${file.name}`)
+        })
     })
-  })
 }
 
 /**
@@ -72,27 +73,27 @@ function upload(bucket, filePath, key) {
  * @param {Mongoose:Chat} chat Chat with credentials
  */
 function del(uri, chat) {
-  return new Promise((resolve, reject) => {
-    try {
-      const key = JSON.parse(chat.googleKey)
-      const storage = getStorage(key)
-      const bucket = storage.bucket(key.project_id)
-      const file = bucket.file(path.basename(uri))
-      file.delete(err => {
-        if (err) {
-          reject(err)
-          return
+    return new Promise((resolve, reject) => {
+        try {
+            const key = JSON.parse(chat.googleKey)
+            const storage = getStorage(key)
+            const bucket = storage.bucket(key.project_id)
+            const file = bucket.file(path.basename(uri))
+            file.delete(err => {
+                if (err) {
+                    reject(err)
+                    return
+                }
+                resolve()
+            })
+        } catch (err) {
+            reject(err)
         }
-        resolve()
-      })
-    } catch (err) {
-      reject(err)
-    }
-  })
+    })
 }
 
 // Exports
 module.exports = {
-  put,
-  del,
+    put,
+    del,
 }

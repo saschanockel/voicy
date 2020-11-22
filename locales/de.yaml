@@ -1,0 +1,40 @@
+files_false: "\U0001F4C1 Wunderbar! *Voicy* wird ab sofort alle Audio-Dateien in diesem Chat *ignorieren*."
+files_true: "\U0001F4C1 Wunderbar! *Voicy* wird ab sofort versuchen, alle Audio-Dateien in diesem Chat zu *erkennen*."
+google: 'Antworte auf diese Nachricht mit der JSON-Datei mit den Anmeldeinformationen für die Google Cloud, um die Google Speech-Spracherkennung einzurichten. Nicht ganz sicher, was das ist und woher du die bekommen kannst? Schau dir dieses [Tutorial](https://medium.com/@nikitakolmogorov/setting-up-google-speech-for-voicybot-b806545750f8) an.'
+google_error_doc: 'Sorry, du solltest mit einem Dokument mit Anmeldeinformationen antworten.'
+google_error_mime: 'Entschuldigung, der MIME-Typ des Dokuments sollte ''text/plain'' sein.'
+google_success: 'Herzlichen Glückwunsch! *Voicy* hat die Anmeldeinformations-Datei für das *${projectId}* Google-Cloud-Projekt erhalten. Jetzt kannst du die Google-Spracherkennung verwenden.'
+help: "\U0001F60E *Voicy* wandelt alle erhaltenen Sprachnachrichten und Audio-Dateien (.ogg, .flac, .wav, .mp3) zu Text um. Du kannst *Voicy* entweder im direkten Chat nutzen oder ihn oder einer Gruppe hinzufügen.\n\nWenn du diesen Bot in einem privaten Chat verwenden möchtest, erstelle bitte eine private Gruppe mit dieser Person und füg *Voicy* hinzu. Wenn du *Voicy* zu einem Gruppenchat hinzufügen möchtest, kannst du *Voicy* von dem Gruppenprofil oder dem Bot-Profil aus als Mitglied hinzufügen.\n\n/help – zeigt diese Meldung \U0001F631\n\n/engine – hier kannst du eine der Spracherkennungs-Engines auswählen: wit.ai, Yandex SpeechKit oder Google Speech ⚙\n/language – damit kannst du die Erkennungssprache auswählen \U0001F4E3\n/lock – umschalten, ob Nicht-Admins in Gruppen-Chats die Befehle verwenden können \U0001F511 \n/files – umschalten, ob der Bot versuchen sollte, Audiodateien zu konvertieren, oder sie einfach ignoriert \U0001F4C1\n/silent – schaltet den Stumm-Modus ein, sodass keine zusätzliche Nachrichten wie „Spracherkennung wird gestartet“ gesendet werden \U0001F636\n/google – Google-Anmeldeinformationen für Google Speech einrichten \U0001F986\n/geeky — Die übrigen Zusatzfunktionen, die hauptsächlich von fortgeschrittenen Benutzern verwendet werden (wie die gemeinsame Nutzung von Google-Anmeldeinformationen oder die Umgehung des 20-MB-Telegrammlimits) \U0001F47B
+error_group: "\U0001F605 Tut mir leid, aber dieser Befehl funktioniert nur in Gruppen-Chats."
+lock_true: "\U0001F511 Wunderbar! *Voicy* reagiert in diesem Chat nun nur noch auf Befehle, die von einem *Administrator* gesendet werden."
+lock_false: "\U0001F511 Wunderbar! *Voicy* reagiert nun auf Befehle von *jedem* in diesem Chat."
+silent_true: "\U0001F636 Großartig! *Voicy* funktioniert jetzt im *Stumm-Modus*: Er sendet keine Nachrichten in den Chat mit Ausnahme der tatsächlichen Stimm-Transkriptionen."
+silent_false: "\U0001F60F Prächtig! *Voicy* funktioniert jetzt im *normalen Modus*: Er sendet „Spracherkennung wird gestartet“-Nachrichten, direkt nachdem eine Sprachnachrichte empfangen wurde."
+start: "\U0001F44B Hallo! *Voicy* ist ein Stimmerkennungs-Bot, der alle Sprachnachrichten und Audio-Dateien (.ogg, .flac, .wav,. mp3) zu Text umwandelt.\n\n*Voicy* unterstützt drei Stimme-Erkennungs-Engines: wit.ai, Yandex SpeechKit und die Google-Spracherkennung. Vorerst wird wit.ai verwendet, aber du kannst jederzeit mit /engine zu Google Speech oder Yandex SpeechKit wechseln. Weitere Informationen unter /help.\n"
+engine: "\U0001F44B Bitte wählen Sie die Spracherkennungs-Engine. Google Speech ist genauer und unterstützt Audio, das länger als 50 Sekunden ist, muss aber mit Google-Cloud-Anmeldeinformationen eingerichtet werden (das ist etwas mühsam). Yandex SpeechKit ist ziemlich genau, kostenlos, privat und unterstützt die meiste Zeit Audio mit mehr als 50 Sekunden, hat aber nur eine begrenzt lange Liste von Sprachen. Wit.ai ist weniger genau, kostenlos, unterstützt nur Audio mit maximal 50 Sekunden, hat aber viele Sprachen. Bitte beachte, dass alle drei verschiedene Sprachen unterstützen, wähl also diejenige, die dir am besten passt."
+callback_error: 'Nur die Person, die den Befehl gestartet hat, kann Optionen auswählen'
+engine_success: "\U0001F44D *Voicy* verwendet jetzt *${engine}* in diesem Chat. Danke! Vergiss nicht, die Sprache mit /language einzustellen."
+language: "\U0001F44B Bitte wähl die Sprache der Spracherkennung für ${engine}."
+language_without_engine: "\U0001F44B Bitte wähl die Sprache der Spracherkennung."
+language_success: "\U0001F44D *Voicy* spricht jetzt *${language}* (${engine}) in diesem Chat. Danke!"
+error_twenty: "_\U0001F46E Ich kann keine Sprachnachrichten erkennen, die größer als 20 Megabytes sind_"
+initiated: "_\U0001F984 Spracherkennung wird gestartet..._"
+speak_clearly: "_\U0001F46E Bitte deutlich sprechen, das konnte ich nicht verstehen_"
+error: "_\U0001F46E Das konnte ich nicht verstehen_"
+google_error_creds: "\U0001F62E Bitte richte die Google-Anmeldeinformationen mit dem /google Befehl ein oder ändere die Engine mit dem Befehl /engine. Deine Zugangsdaten sind noch nicht eingerichtet."
+geeky: |
+  /enableGoogle — Gib deine persönlichen Google-Zugangsdaten für diesen Chat frei, ohne sie preiszugeben
+  /disableGoogle — Entferne deine persönlichen Google-Anmeldedaten aus diesem Chat, ohne sie preiszugeben
+  /timecodes — Umschalten der Timecodes in den Transkriptionen (wenn *Voicy* die Timecodes für jedes transkribierte Stück Audio angibt)
+  /url — Umschalten der Spracherkennung von URL's (*Voicy* wird versuchen, Audiodateien von den von dir gesendeten URL's herunterzuladen und sie in Text umzuwandeln)
+  /l — Dasselbe wie /language
+  `/l en` — Abkürzung zum Wechseln der Sprache, probiere es mit verschiedenen Sprachcodes aus
+google_enable_personal_not_setup: 'Sieht aus, als wären deine persönlichen Google Cloud-Anmeldeinformationen noch nicht festgelegt worden. Bitte tu dies bevor du versuchst, deinen Google-Schlüssel in diesem Chat zu aktivieren.'
+google_enable_success: Wunderbar. Deine Google Cloud-Anmeldedaten werden nun in diesem Chat verwendet.
+google_disable_personal_not_setup: 'Sieht aus, als wären deine persönlichen Google Cloud-Anmeldeinformationen noch nicht festgelegt worden. Bitte tu dies bevor du versuchst, deinen Google-Schlüssel in diesem Chat zu deaktivieren.'
+google_disable_error_wrong_key: Dieser Chat verwendet deine Anmeldeinformationen noch nicht.
+google_disable_success: Wunderbar. Deine Google Cloud-Anmeldedaten werden in diesem Chat nicht mehr verwendet.
+oops: 'Hoppla! Diese Funktion ist noch nicht implementiert.'
+timecodes_true: Super! Jetzt fügt *Voicy* Timecodes zum erkannten Text hinzu.
+timecodes_false: Super! Jetzt fügt *Voicy* dem erkannten Text keine Timecodes mehr hinzu.
+url: 'Wenn du das Telegram limit von 20 MB pro Datei umgehen möchtest, kannst du voicybot.com direkt verwenden.'

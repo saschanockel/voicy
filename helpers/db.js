@@ -7,12 +7,12 @@ const { Voice, Chat } = require('../models')
  * @returns Chat with the specified id
  */
 async function findChat(id) {
-  let chat = await Chat.findOne({ id })
-  if (!chat) {
-    chat = new Chat({ id })
-    chat = await chat.save()
-  }
-  return chat
+    let chat = await Chat.findOne({ id })
+    if (!chat) {
+        chat = new Chat({ id })
+        chat = await chat.save()
+    }
+    return chat
 }
 
 /**
@@ -23,26 +23,22 @@ async function findChat(id) {
  * @param {Int} duration Duration of this voice message
  */
 async function addVoice(url, text, chat, duration, textWithTimecodes, fileId) {
-  // Get language
-  const language =
-    chat.engine === 'wit'
-      ? chat.witLanguage
-      : chat.engine === 'ashmanov'
-      ? 'ashmanov'
-      : chat.googleLanguage
-  // Create and save voice
-  const voice = new Voice({
-    url,
-    text,
-    language,
-    duration,
-    engine: chat.engine,
-    textWithTimecodes,
-    fileId,
-  })
-  const dbvoice = await voice.save()
-  // Return the voice
-  return dbvoice
+    // Get language
+    const language = chat.engine === 'wit'
+        ? chat.witLanguage
+        : chat.googleLanguage
+    // Create and save voice
+    const voice = new Voice({
+        url,
+        text,
+        language,
+        duration,
+        engine: chat.engine,
+        textWithTimecodes,
+        fileId,
+    })
+    // Return the voice
+    return voice.save()
 }
 
 /**
@@ -53,12 +49,12 @@ async function addVoice(url, text, chat, duration, textWithTimecodes, fileId) {
  * @returns {Mongoose:Voice} Voice or null
  */
 function findVoice(url, language, engine) {
-  return Voice.findOne({ url, language, engine })
+    return Voice.findOne({ url, language, engine })
 }
 
 // Exports
 module.exports = {
-  findChat,
-  addVoice,
-  findVoice,
+    findChat,
+    addVoice,
+    findVoice,
 }
