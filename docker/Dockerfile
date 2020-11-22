@@ -9,7 +9,7 @@ LABEL maintainer="saschanockel"
 ENV HOME="/config/voicybot"
 
 # volume
-VOLUME /config/voicybot
+VOLUME /config
 
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
