@@ -1,21 +1,13 @@
 [![Voicybot](/img/logo.png?raw=true)](http://voicybot.com/)
 
-# [@voicybot](https://t.me/voicybot) main repository
+# Fork of [voicybot](https://github.com/backmeupplz/voicy) with various changes
 
-This repository contains the code for one of the most popular bots I've ever built for Telegram — [@voicybot](https://t.me/voicybot). Please, feel free to fork, add features and create pull requests so that everybody (over 600 000 chats) can experience the features you've built.
-
-You can also help by translating the bot to other languages or fixing some texts in existing languages by modifying the `locales` folder.
-
-# List of repositories
-
-- [Voicy](https://github.com/backmeupplz/voicy) — the main [@voicybot](https://t.me/voicybot) code
-- [Voicy payments](https://github.com/backmeupplz/voicy-payments) — payments service that used stripe to process payments for the Google Speech seconds of recognition; currently retired as the stats server for [voicybot.com](http://voicybot.com)
-- [Voicy landing](https://github.com/backmeupplz/voicy-landing) — [voicybot.com](http://voicybot.com) landing page
+I mainly refactored the code a bit, upgraded the dependencies, dealt with deprecated stuff and overall made the bot more general use without any promo or ads.
 
 # Installation and local launch
 
-1. Clone this repo: `git clone https://github.com/backmeupplz/voicy`
-2. Launch the [mongo database](https://www.mongodb.com/) locally
+1. Clone this repo: `git clone https://github.com/saschanockel/voicy`
+2. Launch the [mongo database](https://www.mongodb.com/) locally or use docker for it
 3. Create `.env` file with the environment variables listed below
 4. Install ffmpeg on your machine
 5. Run `yarn install` in the root folder
@@ -24,25 +16,15 @@ You can also help by translating the bot to other languages or fixing some texts
 # Environment variables in `.env` file
 
 - `MONGO_URL` — Url for the mongo database used
-- `TOKEN` — Telegram bot token
-- `SALT` — Random salt to generate various encrypted stuff
+- `TOKEN` — Your telegram bot token
 - `ADMIN_ID` — Chat id of the person who shall receive valuable logs
 - `WIT_LANGUAGES` — A map of language names to Wit.ai tokens
+- `UPDATES_LOG_DIR` Path where the updates.log should be stored in the style of your OS e.g. on Windows C:\\\logs, if not set the file will be located in the app directory
+- `USE_WEBHOOK` — Use a Webhook or not (true/false), leave empty if not using a webhook
+- `WEBHOOK_DOMAIN` — Use this domain when using a webhook, else can be left empty
 
 Extra info is available in `.env.sample` file.
 
-# Continuous integration
-
-Any commit pushed to master gets deployed to [@voicybot](https://t.me/voicybot) via [CI Ninja](https://github.com/backmeupplz/ci-ninja).
-
 # License
 
-MIT — use for any purpose. Would be great if you could leave a note about the original developers. Thanks!
-
-# As seen on
-
-[![Habrahabr](/img/habr.png?raw=true)](https://habrahabr.ru/post/316824/)
-[![Spark](/img/spark.png?raw=true)](https://spark.ru/startup/voicy/blog/19008/kak-zapustit-proekt-v-odinochku/)
-[![Reddit](/img/reddit.png?raw=true)](https://redd.it/5iduzy)
-[![Bot Store](/img/bs.png?raw=true)](https://storebot.me/bot/voicybot)
-[![Product Hunt](/img/ph.png?raw=true)](https://www.producthunt.com/posts/voicy)
+MIT — use for any purpose. Would be great if you could leave a note about the original developers and maybe also me :). Thanks!

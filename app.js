@@ -1,5 +1,6 @@
 // Load env variables
-require('dotenv').config({ path: `${__dirname}/.env` })
+const path = require('path')
+require('dotenv').config({ path: path.join(__dirname, '.env') })
 
 // Init
 const setupPromises = require('./init/setupPromises')
