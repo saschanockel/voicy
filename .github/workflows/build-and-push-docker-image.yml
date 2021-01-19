@@ -7,8 +7,6 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./docker
     steps:
       -
         name: Set up QEMU
@@ -24,6 +22,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       -
         name: Build and push
+        env:
+          working-directory: ./docker
         id: docker_build
         uses: docker/build-push-action@v2
         with:
