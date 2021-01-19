@@ -1,6 +1,6 @@
 // Dependencies
 const path = require('path')
-const Storage = require('@google-cloud/storage')
+const { Storage } = require('@google-cloud/storage')
 
 /**
  * Getting google storage api for the chat
