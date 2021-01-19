@@ -26,7 +26,7 @@ RUN \
  rm -rf \
     /tmp/*
 
-COPY ./start.sh /
+COPY ./docker/start.sh /
 RUN chmod +x /start.sh
 
 # volume
