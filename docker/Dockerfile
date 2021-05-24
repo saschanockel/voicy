@@ -26,8 +26,8 @@ RUN \
  rm -rf \
     /tmp/*
 
-COPY ./docker/start.sh /
-RUN chmod +x /start.sh
+COPY ./docker/entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
 # volume
 VOLUME /config

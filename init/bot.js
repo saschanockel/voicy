@@ -1,5 +1,5 @@
 // Dependencies
-const Telegraf = require('telegraf')
+const { Telegraf } = require('telegraf')
 const cluster = require('cluster')
 const uuid = require('uuid')
 const { report } = require('../helpers/report')

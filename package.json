@@ -12,28 +12,28 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "@google-cloud/speech": "^4.1.4",
-    "@google-cloud/storage": "^5.5.0",
-    "bluebird": "^3.4.6",
-    "dotenv": "^8.2.0",
+    "@google-cloud/speech": "^4.5.1",
+    "@google-cloud/storage": "^5.8.5",
+    "bluebird": "^3.7.2",
+    "dotenv": "^10.0.0",
     "download": "^8.0.0",
     "fluent-ffmpeg": "^2.1.2",
-    "js-yaml": "^3.12.1",
-    "lodash": "^4.17.19",
-    "mongoose": "^5.10.15",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.10",
     "semaphore-async-await": "^1.5.1",
-    "telegraf": "^3.27.1",
+    "telegraf": "^4.3.0",
     "telegraf-i18n": "^6.6.0",
     "temp": "^0.9.4",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "eslint": "^7.14.0",
+    "eslint": "^7.27.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-import": "^2.23.3",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
