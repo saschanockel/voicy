@@ -1,4 +1,4 @@
-FROM node:14.15.4-alpine
+FROM node:14.17.0-alpine
 
 LABEL maintainer="saschanockel"
 
@@ -32,4 +32,4 @@ RUN chmod +x /entrypoint.sh
 # volume
 VOLUME /config
 
-ENTRYPOINT /start.sh
+ENTRYPOINT /entrypoint.sh
